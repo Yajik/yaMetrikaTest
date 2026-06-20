@@ -2,49 +2,124 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Тест Метрики</title>
+    <title>Тест карты кликов</title>
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {
-                if (document.scripts[j].src === r) {
-                    return;
-                }
-            }
-            k=e.createElement(t),
-            a=e.getElementsByTagName(t)[0],
-            k.async=1,
-            k.src=r,
-            a.parentNode.insertBefore(k,a)
-        })(window, document,'script',
-        'https://mc.yandex.ru/metrika/tag.js?id=110019909', 'ym');
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110019909', 'ym');
 
-        ym(110019909, 'init', {
-            ssr:true,
-            webvisor:true,
-            clickmap:true,
-            ecommerce:"dataLayer",
-            referrer: document.referrer,
-            url: location.href,
-            accurateTrackBounce:true,
-            trackLinks:true
-        });
-    </script>
-    <noscript>
-        <div>
-            <img src="https://mc.yandex.ru/watch/110019909"
-                 style="position:absolute; left:-9999px;"
-                 alt="" />
-        </div>
-    </noscript>
-    <!-- /Yandex.Metrika counter -->
-
+    ym(110019909, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110019909" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 </head>
-<body>
-    <h1>Тест Метрики</h1>
-    <button>Нажми меня</button>
+
+<body style="font-family: Arial, sans-serif; max-width: 1000px; margin: auto;">
+
+<h1>Тест карты кликов Яндекс Метрики</h1>
+
+<p>
+    Страница предназначена для проверки карты кликов.
+    Нажимайте на всё подряд.
+</p>
+
+<hr>
+
+<h2>Обычные кнопки</h2>
+
+<button>Кнопка А</button>
+<button>Кнопка Б</button>
+<button>Кнопка В</button>
+
+<hr>
+
+<h2>Ссылки</h2>
+
+<p>
+    <a href="https://ya.ru" target="_blank">Яндекс</a>
+</p>
+
+<p>
+    <a href="https://google.com" target="_blank">Google</a>
+</p>
+
+<p>
+    <a href="https://github.com" target="_blank">GitHub</a>
+</p>
+
+<hr>
+
+<h2>Карточки</h2>
+
+<div class="card">
+    Карточка 1
+</div>
+
+<div class="card">
+    Карточка 2
+</div>
+
+<div class="card">
+    Карточка 3
+</div>
+
+<hr>
+
+<h2>Ложная кнопка</h2>
+
+<div class="fake-button">
+    Скачать бесплатно
+</div>
+
+<p>
+    Она выглядит кликабельной, но ничего не делает.
+</p>
+
+<hr>
+
+<h2>Разбросанные элементы</h2>
+
+<div style="height: 400px;"></div>
+
+<button>Кнопка в середине страницы</button>
+
+<div style="height: 400px;"></div>
+
+<button>Кнопка ближе к низу страницы</button>
+
+<div style="height: 400px;"></div>
+
+<button>Последняя кнопка</button>
+
+<script>
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+            alert(card.textContent);
+        });
+    });
+</script>
+
+<style>
+.card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.fake-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+</style>
+
 </body>
 </html>
