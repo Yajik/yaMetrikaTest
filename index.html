@@ -4,34 +4,47 @@
     <meta charset="UTF-8">
     <title>Тест Метрики</title>
 
-    <!-- Код счетчика Метрики сюда -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {
+                if (document.scripts[j].src === r) {
+                    return;
+                }
+            }
+            k=e.createElement(t),
+            a=e.getElementsByTagName(t)[0],
+            k.async=1,
+            k.src=r,
+            a.parentNode.insertBefore(k,a)
+        })(window, document,'script',
+        'https://mc.yandex.ru/metrika/tag.js?id=110019909', 'ym');
+
+        ym(110019909, 'init', {
+            ssr:true,
+            webvisor:true,
+            clickmap:true,
+            ecommerce:"dataLayer",
+            referrer: document.referrer,
+            url: location.href,
+            accurateTrackBounce:true,
+            trackLinks:true
+        });
+    </script>
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/110019909"
+                 style="position:absolute; left:-9999px;"
+                 alt="" />
+        </div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
 </head>
 <body>
-    <h1>Тест Яндекс Метрики</h1>
-
-    <p>Обычная ссылка:</p>
-    <a href="https://ya.ru">Перейти в Яндекс</a>
-
-    <hr>
-
-    <button id="btn1">Кнопка 1</button>
-    <button id="btn2">Кнопка 2</button>
-
-    <hr>
-
-    <form>
-        <input type="text" placeholder="Имя">
-        <button type="submit">Отправить</button>
-    </form>
-
-    <script>
-        document.getElementById('btn1').onclick = () => {
-            console.log('Кнопка 1');
-        };
-
-        document.getElementById('btn2').onclick = () => {
-            console.log('Кнопка 2');
-        };
-    </script>
+    <h1>Тест Метрики</h1>
+    <button>Нажми меня</button>
 </body>
 </html>
